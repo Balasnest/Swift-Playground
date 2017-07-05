@@ -142,7 +142,6 @@ submitButton()
  * This helps avoid the nested conditions as seen in the 'if let'.
  * Unwrapped optional values are available in the rest of the code block and even outside of the conditions. There is no need to unwrap them like we did it in 'if let'.
  */
-
 func guardSubmitButton() {
     guard let firstname = nameField, firstname != "" else {
         print("First name is empty")
@@ -161,4 +160,16 @@ func guardSubmitButton() {
 }
 
 guardSubmitButton()
+
+//: other Example for guard
+let optionalCharacterArray:[Character?]
+optionalCharacterArray = ["A","B",nil,"C","D"]
+
+for char in optionalCharacterArray {
+    guard let character = char else {
+        print("🤡")
+        continue
+    }
+    print(character)
+}
 
